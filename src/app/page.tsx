@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Head from "next/head";
+import Image from "next/image"; // ✅ Import Next.js Image
 
 export default function Home() {
   return (
@@ -13,13 +14,21 @@ export default function Home() {
       </Head>
 
       {/* Hero Section */}
-      <section className="h-screen flex items-center justify-center bg-cover bg-center" 
-        style={{ backgroundImage: "url('/images/spa-bg.jpg')" }}>          
+      <section className="h-screen flex items-center justify-center bg-cover bg-center relative">
+        {/* Image de fond */}
+        <Image
+          src="/images/spa-bg.jpg"
+          alt="Centre de Beauté & Bien-être"
+          layout="fill"
+          objectFit="cover"
+          className="absolute z-0"
+        />
+
         <motion.div 
           initial={{ opacity: 0, y: -50 }} 
           animate={{ opacity: 1, y: 0 }} 
           transition={{ duration: 1 }}
-          className="text-center bg-white bg-opacity-70 p-10 rounded-lg shadow-lg"
+          className="relative z-10 text-center bg-white bg-opacity-70 p-10 rounded-lg shadow-lg"
         >
           <h1 className="text-4xl md:text-6xl font-bold mb-4">Bienvenue au Centre de Beauté & Bien-être</h1>
           <p className="text-lg md:text-xl">Offrez-vous un moment de détente et de bien-être.</p>
@@ -50,7 +59,13 @@ export default function Home() {
               viewport={{ once: true }} 
               className="p-6 bg-gray-100 rounded-lg shadow-lg hover:shadow-xl transition"
             >
-              <img src={service.image} className="rounded-lg mb-4 w-full h-40 object-cover" alt={service.title} />
+              <Image 
+                src={service.image} 
+                alt={service.title} 
+                width={400} 
+                height={250} 
+                className="rounded-lg mb-4 w-full h-40 object-cover"
+              />
               <h3 className="text-xl font-semibold">{service.title}</h3>
             </motion.div>
           ))}
