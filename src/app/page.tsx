@@ -3,26 +3,28 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Head from "next/head";
-import Image from "next/image"; // ✅ Import Next.js Image
+import Image from "next/image";
 
 export default function Home() {
   return (
     <>
       <Head>
-        <title>Centre de Beauté & Bien-être</title>
+        <title>Centre de Beauté &amp; Bien-être</title>
         <meta name="description" content="Offrez-vous un moment de détente et de bien-être." />
       </Head>
 
       {/* Hero Section */}
       <section className="h-screen flex items-center justify-center bg-cover bg-center relative">
         {/* Image de fond */}
-        <Image
-          src="/images/spa-bg.jpg"
-          alt="Centre de Beauté & Bien-être"
-          layout="fill"
-          objectFit="cover"
-          className="absolute z-0"
-        />
+        <div className="absolute inset-0">
+          <Image
+            src="/images/spa-bg.jpg"
+            alt="Centre de Beauté &amp; Bien-être"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
 
         <motion.div 
           initial={{ opacity: 0, y: -50 }} 
@@ -30,8 +32,12 @@ export default function Home() {
           transition={{ duration: 1 }}
           className="relative z-10 text-center bg-white bg-opacity-70 p-10 rounded-lg shadow-lg"
         >
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">Bienvenue au Centre de Beauté & Bien-être</h1>
-          <p className="text-lg md:text-xl">Offrez-vous un moment de détente et de bien-être.</p>
+          <h1 className="text-4xl md:text-6xl font-bold mb-4">
+            Bienvenue au Centre de Beauté &amp; Bien-être
+          </h1>
+          <p className="text-lg md:text-xl">
+            Offrez-vous un moment de détente et de bien-être.
+          </p>
           <div className="mt-6 flex justify-center space-x-4">
             <Link href="/reservation">
               <button className="bg-pink-500 text-white px-6 py-3 rounded-full shadow-lg hover:bg-pink-600 transition">
@@ -49,7 +55,7 @@ export default function Home() {
           {[
             { title: "Massage Relaxant", image: "/images/massage.jpg" },
             { title: "Soin du Visage", image: "/images/soin-visage.jpg" },
-            { title: "Manucure & Pédicure", image: "/images/manicure-pedicure.jpg" }
+            { title: "Manucure &amp; Pédicure", image: "/images/manicure-pedicure.jpg" }
           ].map((service, index) => (
             <motion.div 
               key={index} 
@@ -71,7 +77,6 @@ export default function Home() {
           ))}
         </div>
 
-        {/* Bouton Voir Nos Tarifs */}
         <div className="mt-10">
           <Link href="/tarifs">
             <button className="bg-pink-500 text-white px-6 py-3 rounded-full shadow-lg hover:bg-pink-600 transition">
@@ -99,12 +104,17 @@ export default function Home() {
               viewport={{ once: true }}
               className="bg-white p-6 rounded-lg shadow-lg"
             >
-              <p className="italic text-gray-700">"{testimonial.review}"</p>
+              <p className="italic text-gray-700">&quot;{testimonial.review}&quot;</p>
               <h4 className="font-bold mt-4">{testimonial.name}</h4>
             </motion.div>
           ))}
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-10 text-center">
+        <p>&copy; 2025 Centre de Beauté &amp; Bien-être - Tous droits réservés</p>
+      </footer>
     </>
   );
 }

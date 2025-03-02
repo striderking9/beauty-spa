@@ -24,7 +24,7 @@ export default function Contact() {
   return (
     <>
       <Head>
-        <title>Contact - Beauté & Bien-être</title>
+        <title>Contact - Beauté &amp; Bien-être</title>
         <meta name="description" content="Contactez-nous pour toute information ou réservation." />
       </Head>
 
@@ -32,7 +32,7 @@ export default function Contact() {
         {/* Section avec Background Image */}
         <section
           className="py-20 text-center relative bg-cover bg-center min-h-[50vh] flex items-center justify-center"
-          style={{ backgroundImage: "url('/images/contact-bg.jpg')" }} // Assure-toi que l’image est bien dans /public/images/
+          style={{ backgroundImage: "url('/images/contact-bg.jpg')" }} // Assurez-vous que l’image est bien dans /public/images/
         >
           {/* Overlay */}
           <div className="absolute inset-0 bg-black bg-opacity-50"></div>
@@ -96,7 +96,7 @@ export default function Contact() {
         <section className="py-16 bg-white text-center">
           <h2 className="text-2xl font-bold mb-6 text-gray-900">Notre Localisation</h2>
           <div className="max-w-4xl mx-auto">
-            {/* Utilise une vraie carte Google Maps en intégrant un iframe */}
+            {/* Carte Google Maps */}
             <iframe
               className="w-full h-64 rounded-lg shadow-lg"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.935881281286!2d-122.08424968469282!3d37.421999879825814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb5b5b5b5b5b5%3A0x5e9a5b5b5b5b5b5b!2sGoogleplex!5e0!3m2!1sfr!2sfr!4v1611753952824!5m2!1sfr!2sfr"
@@ -110,7 +110,7 @@ export default function Contact() {
         <div className="text-center py-16">
           <Link href="/">
             <button className="bg-gray-800 text-white px-6 py-3 rounded-full shadow-lg hover:bg-gray-900 transition">
-              Retour à l'accueil
+              Retour à l&apos;accueil
             </button>
           </Link>
         </div>
