@@ -110,11 +110,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-10 text-center">
-        <p>&copy; 2025 Centre de Beauté &amp; Bien-être - Tous droits réservés</p>
-      </footer>
     </>
   );
 }
