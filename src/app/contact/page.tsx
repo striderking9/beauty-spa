@@ -30,17 +30,13 @@ export default function Contact() {
 
       <main className="min-h-screen text-gray-800 pt-20">
         {/* Section avec Background Image */}
-        <section
-          className="py-20 text-center relative bg-cover bg-center min-h-[50vh] flex items-center justify-center"
-          style={{ backgroundImage: "url('/images/contact-bg.jpg')" }} // Assurez-vous que l’image est bien dans /public/images/
+        <section className="py-20 text-center relative bg-cover bg-center min-h-[50vh] flex items-center justify-center"
+          style={{ backgroundImage: "url('/images/contact-bg.jpg')" }}
         >
-          {/* Overlay */}
           <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-
-          {/* Contenu */}
           <div className="relative z-10 max-w-4xl mx-auto text-white px-6">
             <h1 className="text-4xl font-bold mb-6 text-pink-400">Nous Contacter</h1>
-            <p className="text-lg mb-10">Besoin d’un renseignement ? Envoyez-nous un message.</p>
+            <p className="text-lg mb-10">Besoin d&apos;un renseignement ? Envoyez-nous un message.</p>
           </div>
         </section>
 

@@ -5,9 +5,9 @@ import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, Pagination } from "swiper/modules"; // ✅ Import des modules
+import { Autoplay, Navigation, Pagination } from "swiper/modules"; 
 
-// ✅ Import des styles CSS nécessaires
+// ✅ Import des styles nécessaires
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -100,10 +100,10 @@ export default function Home() {
         <Swiper
           spaceBetween={20}
           slidesPerView={1}
-          autoplay={{ delay: 3000, disableOnInteraction: false }} // ✅ Auto-slide
-          navigation // ✅ Ajout des boutons Next/Prev
-          pagination={{ clickable: true }} // ✅ Ajout des points de navigation
-          modules={[Autoplay, Navigation, Pagination]} // ✅ Activation des modules
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          navigation
+          pagination={{ clickable: true }}
+          modules={[Autoplay, Navigation, Pagination]} // ✅ Ajout des modules
         >
           {[
             { name: "Oumou L.", review: "Un moment magique ! Le massage était divin." },
@@ -122,22 +122,23 @@ export default function Home() {
       </div>
     </section>
 
-      {/* FAQ */}
-      <section className="py-20 bg-white text-center">
-        <h2 className="text-3xl font-bold mb-10">Questions Fréquentes</h2>
-        <div className="max-w-4xl mx-auto text-left space-y-6">
-          {[
-            { question: "Quels sont vos horaires d'ouverture ?", answer: "Nous sommes ouverts du lundi au samedi de 9h à 19h." },
-            { question: "Puis-je réserver en ligne ?", answer: "Oui, vous pouvez réserver directement sur notre site via la page Réservation." },
-            { question: "Quels types de soins proposez-vous ?", answer: "Nous offrons des soins du visage, des massages, des soins des mains et pieds, et bien plus." }
-          ].map((faq, index) => (
-            <details key={index} className="p-4 border rounded-lg shadow-md cursor-pointer bg-gray-50">
-              <summary className="font-semibold text-lg text-pink-600">{faq.question}</summary>
-              <p className="text-gray-700 mt-2">{faq.answer}</p>
-            </details>
-          ))}
-        </div>
-      </section>
+    {/* FAQ */}
+    <section className="py-20 bg-white text-center">
+      <h2 className="text-3xl font-bold mb-10">Questions Fréquentes</h2>
+      <div className="max-w-4xl mx-auto text-left space-y-6">
+        {[
+          { question: "Quels sont vos horaires d'ouverture ?", answer: "Nous sommes ouverts du lundi au samedi de 9h à 19h." },
+          { question: "Puis-je réserver en ligne ?", answer: "Oui, vous pouvez réserver directement sur notre site via la page Réservation." },
+          { question: "Quels types de soins proposez-vous ?", answer: "Nous offrons des soins du visage, des massages, des soins des mains et pieds, et bien plus." }
+        ].map((faq, index) => (
+          <details key={index} className="p-4 border rounded-lg shadow-md cursor-pointer bg-gray-50">
+            <summary className="font-semibold text-lg text-pink-600">{faq.question}</summary>
+            <p className="text-gray-700 mt-2">{faq.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+
     </>
   );
 }
