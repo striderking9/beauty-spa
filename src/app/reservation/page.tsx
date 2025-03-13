@@ -3,7 +3,6 @@
 import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
-import { motion } from "framer-motion";
 
 export default function Reservation() {
   const [formData, setFormData] = useState({
@@ -71,7 +70,7 @@ export default function Reservation() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  pattern="[0-9]{11}" // Accepte uniquement un numéro à 10 chiffres
+                  pattern="[0-9]{11}" // Accepte uniquement un numéro à 11 chiffres
                   className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
                   required
                 />
@@ -148,14 +147,13 @@ export default function Reservation() {
 
         {/* Section Contact */}
         <section className="py-16 bg-gray-50 text-center">
-          <h2 className="text-2xl font-bold mb-6 text-gray-900">Besoin d'aide ? Contactez-nous !</h2>
+          <h2 className="text-2xl font-bold mb-6 text-gray-900">Besoin d&apos;aide ? Contactez-nous !</h2>
           <p className="text-lg text-gray-600 max-w-4xl mx-auto mb-4">
-            Vous pouvez nous joindre par téléphone pour toute question :
+            Vous pouvez nous joindre par téléphone :
           </p>
           <p className="text-xl font-bold text-pink-500">📞 +223 90 90 90 90</p>
-          <p>- - - - - - - - - - - - -</p>
-          <p className="text-lg text-gray-600 max-w-4xl mx-auto mb-4">
-            Par whatsapp :
+          <p className="text-lg text-gray-600 max-w-4xl mx-auto mt-2">
+            Ou par WhatsApp :
           </p>
           <p className="text-xl font-bold text-pink-500">📞 +33 6 12 34 56 78</p>
           <p className="text-lg text-gray-600 max-w-4xl mx-auto mt-2">
@@ -172,7 +170,7 @@ export default function Reservation() {
         <div className="text-center py-16">
           <Link href="/">
             <button className="bg-gray-800 text-white px-6 py-3 rounded-full shadow-lg hover:bg-gray-900 transition">
-              Retour à l'accueil
+              Retour à l&apos;accueil
             </button>
           </Link>
         </div>

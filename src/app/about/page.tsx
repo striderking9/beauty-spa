@@ -36,9 +36,9 @@ export default function About() {
           >
             <h2 className="text-3xl font-bold mb-6 text-gray-900">Notre Histoire</h2>
             <p className="text-lg text-gray-600 leading-relaxed">
-              Depuis plusieurs années, notre centre de beauté et bien-être s’engage à offrir des prestations de qualité 
-              pour le bien-être de nos clients. Notre équipe passionnée met tout en œuvre pour vous offrir une expérience 
-              unique de relaxation et de soin.
+                Depuis plusieurs années, notre centre de beauté et bien-être s&apos;engage à offrir des prestations de qualité 
+                pour le bien-être de nos clients. Notre équipe passionnée met tout en œuvre pour vous offrir une expérience 
+                unique de relaxation et de soin.
             </p>
           </motion.div>
         </section>
@@ -106,8 +106,8 @@ export default function About() {
                 viewport={{ once: true }}
                 className="p-6 bg-gray-100 rounded-lg shadow-lg hover:shadow-xl transition"
               >
-                <h3 className="text-xl font-semibold text-pink-500">{value.title}</h3>
-                <p className="text-gray-600">{value.description}</p>
+                <h3 className="text-xl font-semibold text-pink-500">&quot;{value.title}&quot;</h3>
+                <p className="text-gray-600">&quot;{value.description}&quot;</p>
               </motion.div>
             ))}
           </div>
@@ -131,7 +131,7 @@ export default function About() {
                 viewport={{ once: true }}
                 className="bg-white p-6 rounded-lg shadow-lg"
               >
-                <p className="italic text-gray-700">"{testimonial.review}"</p>
+                <p className="italic text-gray-700">&quot;{testimonial.review}&quot;</p>
                 <h4 className="font-bold mt-4">{testimonial.name}</h4>
               </motion.div>
             ))}
