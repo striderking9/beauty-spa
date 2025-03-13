@@ -43,6 +43,21 @@ export default function About() {
           </motion.div>
         </section>
 
+
+
+        {/* Section Vidéo */}
+        <section className="py-16 bg-gray-100 text-center">
+        <h2 className="text-3xl font-bold mb-6">Découvrez notre Spa en vidéo</h2>
+        <div className="max-w-4xl mx-auto">
+            <iframe
+            className="w-full h-64 md:h-96 rounded-lg shadow-lg"
+            src="https://www.youtube.com/embed/VIDÉO_ID" // Remplace VIDÉO_ID par l'ID de la vidéo YouTube
+            title="Vidéo de Présentation"
+            allowFullScreen
+            ></iframe>
+        </div>
+        </section>
+
         {/* Notre Équipe */}
         <section className="py-16 bg-gray-100 text-center">
           <h2 className="text-3xl font-bold mb-10 text-gray-900">Notre Équipe</h2>

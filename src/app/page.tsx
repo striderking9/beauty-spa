@@ -4,6 +4,13 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation, Pagination } from "swiper/modules"; // ✅ Import des modules
+
+// ✅ Import des styles CSS nécessaires
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 export default function Home() {
   return (
@@ -55,7 +62,7 @@ export default function Home() {
           {[
             { title: "Massage Relaxant", image: "/images/massage.jpg" },
             { title: "Soin du Visage", image: "/images/soin-visage.jpg" },
-            { title: "Manucure &amp; Pédicure", image: "/images/manicure-pedicure.jpg" }
+            { title: "Manucure et Pédicure", image: "/images/manicure-pedicure.jpg" }
           ].map((service, index) => (
             <motion.div 
               key={index} 
@@ -86,27 +93,48 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Témoignages */}
+      {/* Témoignages avec Slider */}
       <section className="py-20 bg-gray-50 text-center">
-        <h2 className="text-3xl font-bold mb-10">Ce que disent nos clients</h2>
-        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+      <h2 className="text-3xl font-bold mb-10">Ce que disent nos clients</h2>
+      <div className="max-w-3xl mx-auto">
+        <Swiper
+          spaceBetween={20}
+          slidesPerView={1}
+          autoplay={{ delay: 3000, disableOnInteraction: false }} // ✅ Auto-slide
+          navigation // ✅ Ajout des boutons Next/Prev
+          pagination={{ clickable: true }} // ✅ Ajout des points de navigation
+          modules={[Autoplay, Navigation, Pagination]} // ✅ Activation des modules
+        >
           {[
             { name: "Oumou L.", review: "Un moment magique ! Le massage était divin." },
             { name: "Bintou M.", review: "Excellente expérience, détente assurée." },
             { name: "Nadia B.", review: "J'ai adoré la manucure, je reviendrai." },
             { name: "Hawa S.", review: "J'ai adoré la journée avec le salon." }
           ].map((testimonial, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-              viewport={{ once: true }}
-              className="bg-white p-6 rounded-lg shadow-lg"
-            >
-              <p className="italic text-gray-700">&quot;{testimonial.review}&quot;</p>
-              <h4 className="font-bold mt-4">{testimonial.name}</h4>
-            </motion.div>
+            <SwiperSlide key={index}>
+              <div className="bg-white p-6 rounded-lg shadow-lg text-center">
+                <p className="italic text-gray-700">&quot;{testimonial.review}&quot;</p>
+                <h4 className="font-bold mt-4">{testimonial.name}</h4>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    </section>
+
+      {/* FAQ */}
+      <section className="py-20 bg-white text-center">
+        <h2 className="text-3xl font-bold mb-10">Questions Fréquentes</h2>
+        <div className="max-w-4xl mx-auto text-left space-y-6">
+          {[
+            { question: "Quels sont vos horaires d'ouverture ?", answer: "Nous sommes ouverts du lundi au samedi de 9h à 19h." },
+            { question: "Puis-je réserver en ligne ?", answer: "Oui, vous pouvez réserver directement sur notre site via la page Réservation." },
+            { question: "Quels types de soins proposez-vous ?", answer: "Nous offrons des soins du visage, des massages, des soins des mains et pieds, et bien plus." }
+          ].map((faq, index) => (
+            <details key={index} className="p-4 border rounded-lg shadow-md cursor-pointer bg-gray-50">
+              <summary className="font-semibold text-lg text-pink-600">{faq.question}</summary>
+              <p className="text-gray-700 mt-2">{faq.answer}</p>
+            </details>
           ))}
         </div>
       </section>
