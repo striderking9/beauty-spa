@@ -155,7 +155,7 @@ export default function About() {
         <div className="text-center py-16">
           <Link href="/">
             <button className="bg-gray-800 text-white px-6 py-3 rounded-full shadow-lg hover:bg-gray-900 transition">
-              Retour à l'accueil
+              Retour à l&apos;accueil
             </button>
           </Link>
         </div>
